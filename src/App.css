@@ -1,13 +1,189 @@
+@font-face {
+  font-family: 'Nunito Sans'; /* set name */
+  src: url(/nunito_sans_variable.ttf); /* url of the font */
+}
+
+@font-face {
+  font-family: 'Nunito Sans'; /* set name */
+  src: url(/nunito_sans_italic_variable.ttf); /* url of the font */
+  font-style: italic;
+}
+
 #root {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Nunito Sans', Verdana;
+  overflow: hidden;
 }
 
-.app {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
+#modelViewer {
+  position: absolute;
+  width: 70%;
+  height: 95%;
+  z-index: 999;
+}
+
+#container_modelandprompt {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+#container_modelandprompt * {
+  pointer-events: auto;
+}
+
+.psv-panel {
+  z-index: 120;
+}
+
+#div_MVandPSV {
+  position: relative;
+  width: 100%;
+}
+
+#page {
+  margin: 0 auto 0;
+  width: 80vw;
+
+  color: #003356;
+
+  border: 2px solid #003356;
+  background-color: white;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+}
+
+footer {
+  color: #d4e9ff;
+  background-color: #003356;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.logo {
+  max-width: 30%;
+}
+
+.pageHeader {
+  background-color: #d4e9ff;
+  padding: 0.25em 1em 0.25em 1em;
+}
+
+.ReactModal-Overlay {
+  position: absolute;
+  z-index: 9999;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75)
+}
+
+.ReactModal-Content {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+
+  color: white;
+  border: 1px solid #ccc;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.panel-button {
+  stroke: none;
+  border: none;
+  background: none;
+  padding: 0.3em;
+
+  float: right;
+}
+
+.panel-button :hover {
+  scale: 1.2;
+  transition-duration: 0.3s;
+}
+
+.panel-button img {
+  height: 24px;
+  padding: 0.1em 0.2em;
+}
+
+.psv-panel-close-button {
+  right: 16px;
+  top: 8px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.helpsection-smallicon {
+  height: 24px;
+  vertical-align: middle;
+}
+
+.list-wide {
+  display: flex;
+  justify-content: space-evenly;
+
+  list-style-type: none;
+  list-style-position: none;
+  padding-left: 0;
+}
+
+header {
+  text-align: center;
+}
+
+.list-nostyle {
+  list-style-type: none;
+  list-style-position: none;
+  padding-left: 0;
+}
+
+.page-content {
+  padding-left: 1em;
+}
+
+#page_pieces_grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+
+  margin-top: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  gap: 1.5em;
+  justify-content: center;
+  justify-items: center;
+}
+
+#page_pieces_grid div {
   padding: 0;
+  text-align: center;
+
+  border: 1px solid gray;
+  border-radius: 2px;
+  background-color: white;
+  width: fit-content;
+}
+
+#page_pieces_grid div img {
+  max-height: 200px;
+}
+
+#page_pieces_grid div p {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+#page_credits a {
+  font-weight: bold;
 }
