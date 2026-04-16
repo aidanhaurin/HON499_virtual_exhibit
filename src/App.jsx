@@ -116,7 +116,7 @@ function App() {
           {plugins.length > 0 ? <>
             <ReactPhotoSphereViewer
               ref={photoSphereRef} 
-              src="panorama_22mar2026.png"
+              src="panorama_22mar2026_bright.png"
               height={'70vh'} 
               width={"100%"}
               plugins={plugins}
@@ -144,9 +144,8 @@ function App() {
             ></ReactPhotoSphereViewer>
           </> : <></>}
         </div>
-        <br/>
-
       </div>
+      <br/>
 
       {/* all of the non-panorama information */}
       <PageInfoBody

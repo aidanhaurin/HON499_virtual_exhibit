@@ -4,24 +4,15 @@ export const PageFooter = () => {
             <li>
               <p>
                 Developed by Aidan Haurin. <br/>
-                Last updated: 4/2/2026
+                Last updated: 4/16/2026
               </p>
             </li>
 
             <li>
-              <h3>My Links</h3>
-              <ul style={{listStyle: "none", paddingLeft: "0"}}>
-                <li>
-                  <a target="_blank" href="https://github.com/aidanhaurin/HON499_virtual_exhibit">
-                    <img src='bootstrap_icons/github.svg'/> GitHub repo
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://github.com/aidanhaurin/">
-                    <img src='bootstrap_icons/github.svg'/> My GitHub
-                  </a>
-                </li>
-              </ul>
+              <p>
+                © Copyright 2026 La Salle University. <br/>
+                I do not own the rights to any paintings featured here.
+              </p>
             </li>
 
             <li>
@@ -48,6 +39,22 @@ export const PageFooter = () => {
                 <li>
                   <a target="_blank" href="https://twitter.com/LSUAM">
                     Twitter
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <h3>Other Links</h3>
+              <ul style={{listStyle: "none", paddingLeft: "0"}}>
+                <li>
+                  <a target="_blank" href="https://github.com/aidanhaurin/HON499_virtual_exhibit">
+                    <img src='bootstrap_icons/github.svg'/> GitHub repo
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/aidanhaurin/">
+                    <img src='bootstrap_icons/github.svg'/> Aidan's GitHub
                   </a>
                 </li>
               </ul>

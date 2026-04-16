@@ -5,10 +5,21 @@ export const PageInfoBody = ({templates}) => {
             About the project
           </h2>
         </div>
-        <div className="page-content">
-            <i>fill this in later</i>
+        <div className="page-content" style={{margin: "auto", width: "90%"}}>
+            <p className="p-paragraph">
+                This is a project for my La Salle Honors Program capstone, featuring several pieces from the La Salle Art Museum!
+                All of them are presented in a panorama you can move around in, and clicking on one of them will provide a little 3D model and some extra information about the piece.
+                To get started, you might want to click on the "help" icon ( <img src="bootstrap_icons/question-circle-dark.svg"/> ) to learn how to move around.
+            </p>
+            <p className="p-paragraph">
+                I've always had an interest in learning how various forms of digital media are made as well as in making some of my own interactive experiences. 
+                That said, La Salle also prominently features plenty of physical media and resources for their students to access and draw inspiration from, and I wanted to show some appreciation for that.
+                I've already got experience in 3D modelling and web development, and I've used the Art Museum's resources for Digital Arts and Honors work in the past, so I thought it'd be a natural fit.
+            </p>
+            <p className="p-paragraph">
+                <i>-Aidan Haurin</i>
+            </p>
         </div>
-        <br/>
 
         <div className='pageHeader'>
           <h2>
@@ -26,7 +37,17 @@ export const PageInfoBody = ({templates}) => {
                             </p>
                         </a>
                         <p>
-                            <i>{`${temp.metadata.artist}`}</i>
+                            <i>
+                                {temp.metadata.artist.indexOf('(') > 0 ? (
+                                <>
+                                    {temp.metadata.artist.substring(0, temp.metadata.artist.indexOf('('))}
+                                    <br/>
+                                    {temp.metadata.artist.substring(temp.metadata.artist.indexOf('('))}
+                                </>
+                                ) : (
+                                    temp.metadata.artist
+                                )}
+                            </i>
                         </p>
                     </div>
                 ))}
@@ -118,17 +139,21 @@ export const PageInfoBody = ({templates}) => {
             <h3>Special Thanks</h3>
             <ul>
                 <li>
-                    <strong>Carolyn Green</strong> - Director and Chief Curator of the La Salle Art Museum, granted <br/>
+                    <strong>Dr. Carolyn Green Ph.D</strong> - Director and Chief Curator of the La Salle Art Museum, granted <br/>
                     permission on behalf of the Museum to use its resources.
                 </li>
 
                 <li>
-                    <strong>Rebecca Oviedo, Dr. Thomas Blum, Liana Rose D. Salazar, and Tricia Sackor</strong> - credited with 
+                    <strong>Rebecca Oviedo, Dr. Thomas Blum Ph.D, Liana Rose D. Salazar, and Tricia Sackor</strong> - credited with 
                     writing descriptions <br/> for <i>Americana</i>, <i>More Distant Part of the Sea</i>, <i>The Quest</i>, and <i>Tired Travelers</i>, respectively.
+                </li>
+                
+                <li>
+                    <strong>Prof. Geoffrey Beatty</strong> - key mentor and advisor throughout the project.
                 </li>
 
                 <li>
-                    <strong>Dr. Marco Cerocchi, Alex Cook Jr., Jennifer Gomez Maldonado, and Noah Callahan</strong> - providing feedback for the project as part of the course.
+                    <strong>Dr. Marco Cerocchi Ph.D; Alex Cook Jr., Jennifer Gomez Maldonado, and Noah Callahan</strong> - providing feedback for the project as part of the course.
                 </li>
             </ul>
         </div>

@@ -16,6 +16,12 @@
   padding: 0;
   font-family: 'Nunito Sans', Verdana;
   overflow: hidden;
+  
+  /*background-color: #eef6ff;*/
+  background-image: url("bk_collage.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #modelViewer {
@@ -149,13 +155,23 @@ header {
   padding-left: 0;
 }
 
+.page-subheader {
+  margin: auto;
+  text-align: center;
+  width: 20%;
+}
+
 .page-content {
-  padding-left: 1em;
+  padding: 1em;
+}
+
+.page-content .p-paragraph {
+  text-indent: 2em;
 }
 
 #page_pieces_grid {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
   margin-top: 1em;
   margin-left: 0.5em;
@@ -186,4 +202,12 @@ header {
 
 #page_credits a {
   font-weight: bold;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #89c2ff;
 }
