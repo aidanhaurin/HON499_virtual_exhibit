@@ -16,12 +16,28 @@ ReactModal.setAppElement('#root');
 
 function App() {
 
+  //ordered array for template id's
+  const templateIds = [
+    "template_tiredtravelers",
+    "template_ruedelasante",
+    "template_moredistant",
+    "template_whistler",
+    "template_lager",
+    "template_mary",
+    "template_camelid",
+    "template_americana",
+    "template_doorofjustice",
+    "template_gloucester",
+    "template_thequest",
+  ];
+
   //useRefs
   const photoSphereRef = React.useRef();
 
   //useStates
-  const [selectedIndex, setSelectedIndex] = useState(-1)
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const [selectedModel, setSelectedModel] = useState("");
+  const [selectedTemplate, setSelectedTemplate] = useState("");
   const [plugins, setPlugins] = useState([]);
   const [templates, setTemplates] = useState([]);
   const [modalMode, setModalMode] = useState("none");
@@ -38,16 +54,20 @@ function App() {
     const markersPlugs = psv.getPlugin(MarkersPlugin);
     if (!markersPlugs) return;
     markersPlugs.addEventListener("select-marker", (e) => {
+      //get the id's
       const markerId = parseInt(e.marker.id)
       console.log("selected marker:", markerId);
+
+      //set the indices
       setSelectedIndex(markerId);
-      setSelectedModel(modelPicker(markerId))
+      setSelectedModel(modelPicker(markerId));
+      setSelectedTemplate(templateIds[markerId] ?? "");
     });
 
     //set up panel event listener
     psv.addEventListener("hide-panel", () => {
       setSelectedIndex(-1);
-      console.log(`hide-panel event.`);
+      console.log("Hide-panel event.");
     })
 
     //add detection for modals
@@ -100,7 +120,7 @@ function App() {
         <ModalContentsContainer
           modalMode={modalMode}
           setModalMode={setModalMode}
-          selectedIndex={selectedIndex}
+          selectedTemplate={selectedTemplate}
           templates={templates}
         />
       </ReactModal>
@@ -117,7 +137,7 @@ function App() {
             <ReactPhotoSphereViewer
               ref={photoSphereRef} 
               src="panorama_22mar2026_bright.png"
-              height={'70vh'} 
+              height={'90vh'} 
               width={"100%"}
               plugins={plugins}
               onReady={handlePsvReady}

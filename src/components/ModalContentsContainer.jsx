@@ -1,7 +1,9 @@
 import parse from 'html-react-parser';
 import { ModalHelpSection } from './ModalHelpSection';
 
-export const ModalContentsContainer = ({modalMode, setModalMode, selectedIndex, templates}) => {
+export const ModalContentsContainer = ({modalMode, setModalMode, selectedTemplate, templates}) => {
+
+    const currentTemplate = templates.find(t => t.id === selectedTemplate);
 
     const getHeaderName = () => {
         switch(modalMode){
@@ -20,8 +22,8 @@ export const ModalContentsContainer = ({modalMode, setModalMode, selectedIndex, 
         switch(modalMode){
             case "desc":
                 return <>
-                    {templates[selectedIndex].description.split('\n').map((line, i) => (
-                        <span key={i}>{line}<br/></span>
+                    {currentTemplate.description.split('\n').map((line, i) => (
+                        <span key={i}>&emsp;{line}<br/></span>
                     ))}
                 </>
             case "help":
@@ -30,7 +32,7 @@ export const ModalContentsContainer = ({modalMode, setModalMode, selectedIndex, 
                 </>
             case "notes":
                 return <>
-                    {parse(templates[selectedIndex].personal_notes)}
+                    &emsp;{parse(currentTemplate.personal_notes)}
                 </>
             case "none":
                 return <></>

@@ -18,7 +18,7 @@
   overflow: hidden;
   
   /*background-color: #eef6ff;*/
-  background-image: url("bk_collage.png");
+  background-image: url("/bk_collage.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
